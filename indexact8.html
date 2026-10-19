@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Chat App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginScreen">
+    <h1>Class Chat</h1>
+    <form id="authForm">
+      <input type="text" id="displayName" placeholder="Display Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit" id="authButton">Sign up</button>
+      <p id="authToggle">Already have an account? <span>Log in</span></p>
+      <p id="errorMessage"></p>
+    </form>
+  </div>
+
+  <div id="chatScreen" hidden>
+    <header>
+      <span id="myName"></span>
+      <button id="logoutButton">Log out</button>
+    </header>
+    <div id="messageList"></div>
+    <form id="messageForm">
+      <input type="text" id="messageInput" placeholder="Type message... or /weather Manila">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.1/dist/umd/supabase.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

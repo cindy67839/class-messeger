@@ -1,0 +1,195 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --page: #e4eaef;
+  --panel: #ffffff;
+  --ink: #17252f;
+  --muted: #5d6f7c;
+  --line: #d3dce3;
+  --mine: #0f5c6e;
+  --mine-text: #ffffff;
+  --theirs: #eef2f5;
+  --focus: #e08a00;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+/* ---------- Login & Chat Containers ---------- */
+#loginScreen,
+#chatScreen {
+  width: 100%;
+  max-width: 520px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+#loginScreen h1,
+#chatScreen h1 {
+  text-align: center;
+  margin-top: 0;
+  color: var(--ink);
+}
+
+/* ---------- Login Form ---------- */
+#authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#authForm input {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+#authButton {
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--mine);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#authButton:hover {
+  background: #0b4957;
+}
+
+#authToggle {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#authToggle span {
+  color: var(--mine);
+  font-weight: 600;
+}
+
+#errorMessage {
+  min-height: 1.4em;
+  margin-top: 12px;
+  color: #b3261e;
+  text-align: center;
+}
+
+/* ---------- Chat Screen ---------- */
+#chatScreen {
+  display: flex;
+  flex-direction: column;
+  height: min(720px, calc(100vh - 32px));
+  padding: 0;
+}
+
+#chatScreen header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+#myName {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#logoutButton {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#logoutButton:hover {
+  background: var(--theirs);
+}
+
+#messageList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#messageList > div {
+  max-width: 78%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--theirs);
+  border-bottom-left-radius: 4px;
+}
+
+#messageList > div:has(strong:only-child) {
+  align-self: flex-end;
+  background: var(--mine);
+  color: white;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 4px;
+}
+
+#messageForm {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+
+#messageInput {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+#messageForm button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--mine);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#messageForm button:hover {
+  background: #0b4957;
+}
+
+/* ---------- Hidden State ---------- */
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Focus Styles ---------- */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
